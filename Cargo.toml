@@ -1,0 +1,20 @@
+[package]
+name = "algo"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ac-library-rs = "0.2.0"
+itertools = "0.12.0"
+nalgebra = "0.32.3"
+ndarray = "0.15.6"
+num = "0.4.1"
+proconio = "0.4.5"
+rustc-hash = "1.1.0"
+superslice = "1.0.0"
+
+[[bin]]
+name = "algo"
+path = "main.rs"

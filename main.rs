@@ -8,5 +8,17 @@ use std::mem::*;
 use superslice::*;
 
 fn main() {
-    println!("hello");
+    input! {
+        X:String,
+        Y:String
+    }
+    let mut dict = HashMap::new();
+    dict.insert("Ocelot", 0);
+    dict.insert("Serval", 1);
+    dict.insert("Lynx", 2);
+    if dict[&X[..]] >= dict[&Y[..]] {
+        println!("Yes");
+    } else {
+        println!("No");
+    }
 }
