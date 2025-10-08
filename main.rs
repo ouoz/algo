@@ -8,17 +8,20 @@ use std::mem::*;
 use superslice::*;
 
 fn main() {
-    input! {
-        X:String,
-        Y:String
+    input! {n:usize,mut a:[i64;n]};
+    let mut asort = a
+        .iter()
+        .sorted_by(|a, b| a.cmp(b).reverse())
+        .collect::<Vec<_>>();
+
+    let mut alice = 0;
+    let mut bob = 0;
+    for i in 0..n {
+        if i % 2 == 0 {
+            alice += asort[i];
+        } else {
+            bob += asort[i];
+        }
     }
-    let mut dict = HashMap::new();
-    dict.insert("Ocelot", 0);
-    dict.insert("Serval", 1);
-    dict.insert("Lynx", 2);
-    if dict[&X[..]] >= dict[&Y[..]] {
-        println!("Yes");
-    } else {
-        println!("No");
-    }
+    println!("{}", alice - bob);
 }
